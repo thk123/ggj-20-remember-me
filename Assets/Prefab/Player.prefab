@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8938187738352050281}
   - component: {fileID: 8938187738352050286}
   - component: {fileID: 8938187738352050287}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,26 +83,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8938187738352050284}
   m_Enabled: 1
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8938187738352050284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c0ab6c6f076d9b4b1898bd6f747bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
-  frameCounter: 20
 --- !u!1 &8938187739488542845
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +96,7 @@ GameObject:
   - component: {fileID: 8938187739488542846}
   - component: {fileID: 8938187739488542847}
   - component: {fileID: 8938187739488542844}
+  - component: {fileID: 2057809254}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -215,3 +195,22 @@ MonoBehaviour:
   MaxSpeed: 1
   turnSpeed: 200
   face: {fileID: 8938187738352050286}
+--- !u!114 &2057809254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938187739488542845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c0ab6c6f076d9b4b1898bd6f747bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
+  frameCounter: 20
