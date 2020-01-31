@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 463384736}
   - component: {fileID: 463384738}
   - component: {fileID: 463384737}
+  - component: {fileID: 463384739}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -278,6 +279,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463384735}
   m_CullTransparentMesh: 0
+--- !u!95 &463384739
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463384735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01627031997aa6240bdfabd77da45474, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &712806317
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,9 +307,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712806318}
+  - component: {fileID: 712806319}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +329,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712806319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712806317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20003b58fb67bbf4bb2bde23d27d6cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueTextEditor: {fileID: 1662045485}
+  AnimatorEditor: {fileID: 463384739}
 --- !u!1 &1303120386
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +355,7 @@ GameObject:
   - component: {fileID: 1303120389}
   - component: {fileID: 1303120388}
   - component: {fileID: 1303120387}
+  - component: {fileID: 1303120391}
   m_Layer: 0
   m_Name: Dialogue Object
   m_TagString: Untagged
@@ -401,6 +437,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303120391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303120386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c80586d52ba28244a39f03d2f9d3c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueFileNameEditor: Character1
 --- !u!1 &1326989354
 GameObject:
   m_ObjectHideFlags: 0
