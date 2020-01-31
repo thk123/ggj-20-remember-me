@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
@@ -33,10 +32,8 @@ public class Dialogue : MonoBehaviour
     void GetReferences()
     {
         DialogueControllerRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<DialogueController>();
-        CurrentEventRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GetCurrentEvent();
-
         TextAsset jsonDialogueTextFile = Resources.Load<TextAsset>("CharacterDialogue/" + DialogueFileNameEditor);
-        DialogueDataRef = JsonConvert.DeserializeObject<DialogueData>(jsonDialogueTextFile.text);
+        DialogueDataRef = JsonUtility.FromJson<DialogueData>(jsonDialogueTextFile.text);
     }
 
     void ChangeDialogueOnClick()
@@ -52,7 +49,7 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
-        DialogueControllerRef.DisplayDialogue(DialogueDataRef.Name, DialogueDataRef.Dialogue[CurrentSentence]);
+        DialogueControllerRef.DisplayDialogue(DialogueDataRef.Dialogue[CurrentSentence]);
         CurrentSentence += 1;
     }
 }

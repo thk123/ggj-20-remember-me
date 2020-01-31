@@ -18,10 +18,8 @@ public class DialogueController : MonoBehaviour
         AnimatorEditor.SetBool("IsDialogueOpen", false);
     }
 
-    public void DisplayDialogue(string name, string sentence)
+    public void DisplayDialogue(string sentence)
     {
-        NameTextEditor.text = name;
-
         StopAllCoroutines();
         StartCoroutine(AnimateSentence(sentence));
     }
