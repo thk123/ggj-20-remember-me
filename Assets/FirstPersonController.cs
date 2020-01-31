@@ -7,6 +7,9 @@ using Vector3 = UnityEngine.Vector3;
 public class FirstPersonController : MonoBehaviour
 {
     public float MaxSpeed;
+    public float turnSpeed;
+
+    public Camera face;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +38,30 @@ public class FirstPersonController : MonoBehaviour
         {
             transform.Translate(Vector3.right * MaxSpeed, Space.Self);
         }
+        
+        var rot = new Vector3(0f, 0f, 0f);
+        // rotates Camera Left
+        if (Input.GetAxis("Mouse X") < 0)
+        {
+            rot.y -= 1;
+        }
+        // rotates Camera Left
+        if (Input.GetAxis("Mouse X") > 0)
+        {
+            rot.y += 1;
+        }
+ 
+        // rotates Camera Up
+        if (Input.GetAxis("Mouse Y") < 0)
+        {
+            rot.x += 1;
+        }
+        // rotates Camera Down
+        if (Input.GetAxis("Mouse Y") > 0)
+        {
+            rot.x -= 1;
+        }
+
+        face.transform.Rotate(rot, turnSpeed * Time.deltaTime);
     }
 }
