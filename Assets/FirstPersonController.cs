@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vector3 = UnityEngine.Vector3;
 
 public class FirstPersonController : MonoBehaviour
@@ -14,12 +15,14 @@ public class FirstPersonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState =CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * MaxSpeed, Space.Self);
@@ -38,30 +41,5 @@ public class FirstPersonController : MonoBehaviour
         {
             transform.Translate(Vector3.right * MaxSpeed, Space.Self);
         }
-        
-        var rot = new Vector3(0f, 0f, 0f);
-        // rotates Camera Left
-        if (Input.GetAxis("Mouse X") < 0)
-        {
-            rot.y -= 1;
-        }
-        // rotates Camera Left
-        if (Input.GetAxis("Mouse X") > 0)
-        {
-            rot.y += 1;
-        }
- 
-        // rotates Camera Up
-        if (Input.GetAxis("Mouse Y") < 0)
-        {
-            rot.x += 1;
-        }
-        // rotates Camera Down
-        if (Input.GetAxis("Mouse Y") > 0)
-        {
-            rot.x -= 1;
-        }
-
-        face.transform.Rotate(rot, turnSpeed * Time.deltaTime);
     }
 }
