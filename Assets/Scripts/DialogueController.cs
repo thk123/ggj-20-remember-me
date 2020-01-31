@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
-    public TextMeshProUGUI NameTextEditor;
     public TextMeshProUGUI DialogueTextEditor;
     public Animator AnimatorEditor;
 
