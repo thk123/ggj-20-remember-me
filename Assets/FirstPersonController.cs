@@ -25,21 +25,26 @@ public class FirstPersonController : MonoBehaviour
         Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * MaxSpeed, Space.Self);
+            transform.Translate(yClamped(transform.forward) * MaxSpeed, Space.World);
         } 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * MaxSpeed, Space.Self);
+            transform.Translate(yClamped(transform.forward * -1) * MaxSpeed, Space.World);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * MaxSpeed, Space.Self);
+            transform.Translate(yClamped(-1 * transform.right) * MaxSpeed, Space.World);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * MaxSpeed, Space.Self);
+            transform.Translate(yClamped(transform.right) * MaxSpeed, Space.World);
         }
+    }
+
+    Vector3 yClamped(Vector3 inVector)
+    {
+        return new Vector3(inVector.x, 0.0f, inVector.z);
     }
 }
