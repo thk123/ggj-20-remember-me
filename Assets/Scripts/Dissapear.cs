@@ -16,12 +16,14 @@ public class Dissapear : MonoBehaviour
     Color ChangeInAlpha;
 
     private float fadeValue;
+
+    private Material[] materials;
+
     // Start is called before the first frame update
     void Start()
     {
-        var material = GetComponent<Renderer>().material;
+        materials = GetComponent<Renderer>().materials;
         fadeValue = 0.0f;
-
     }
 
     private void OnCollisionEnter(Collision other)
@@ -52,20 +54,17 @@ public class Dissapear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var material = GetComponent<Renderer>().material;
-        if (Input.GetKeyDown(AlphaUp)) { Aalpha+=0.1f; material.color = new Color(1, 0, 0, Aalpha); }
-        if (Input.GetKeyDown(AlphaDown)) { Aalpha -= 0.1f;  material.color = new Color(255, 255, 255, Aalpha); }
         if (Tauched == true)
         {
             if (counter > 100)
             {
-                material.SetFloat("_Blend", 1.0f);
+                setBlendLevel(1.0f);
             }
             else
             {
                 counter++;
                 fadeValue += 0.01f;
-                material.SetFloat("_Blend",fadeValue);
+                setBlendLevel(fadeValue);
             }
         }
         else
@@ -74,13 +73,21 @@ public class Dissapear : MonoBehaviour
             {
                 counter--;
                 fadeValue -= 0.01f;
-                material.SetFloat("_Blend",fadeValue);
+                setBlendLevel(fadeValue);
             }
             else
             {
-                material.SetFloat("_Blend", 0.0f);
+                setBlendLevel(0.0f);
             }
         }
 
+    }
+
+    void setBlendLevel(float level)
+    {
+        foreach (Material material in materials)
+        {
+            material.SetFloat("_Blend", level);
+        }
     }
 }

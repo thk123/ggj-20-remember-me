@@ -481,11 +481,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MemoryTree (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 8174383206332392250, guid: e266c1e67f2b8331ca48c7e0837e0965,
-        type: 3}
-      propertyPath: m_TagString
-      value: Box
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e266c1e67f2b8331ca48c7e0837e0965, type: 3}
 --- !u!1001 &861544577
@@ -503,17 +498,17 @@ PrefabInstance:
     - target: {fileID: 5367395132725563718, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.9433962
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5367395132725563718, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.10234961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5367395132725563718, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.10234961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8857114228631132710, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
@@ -722,12 +717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4211254125444573983, guid: e266c1e67f2b8331ca48c7e0837e0965,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -8081317734454312985, guid: e1f70453a754edb4abdfdbb2c9518cb5,
-        type: 3}
     - target: {fileID: 5128025404204552489, guid: e266c1e67f2b8331ca48c7e0837e0965,
         type: 3}
       propertyPath: m_LocalPosition.x

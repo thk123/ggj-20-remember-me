@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5468472059059452842}
   m_Layer: 0
   m_Name: MemoryTree
-  m_TagString: Tree
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8174383206332392250}
-  m_Mesh: {fileID: -8081317734454312985, guid: 5110c81516144af08be8b0caf9aa93bd, type: 3}
+  m_Mesh: {fileID: -8081317734454312985, guid: cd01891239ce147a8a76313a91063f2f, type: 3}
 --- !u!23 &7587976290826606566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,8 +62,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f8bf1e105ef2a094d96112746aad6799, type: 2}
-  - {fileID: 2100000, guid: f8bf1e105ef2a094d96112746aad6799, type: 2}
+  - {fileID: 2100000, guid: 109d86ad09a5e63ed9c727190f6bc412, type: 2}
+  - {fileID: 2100000, guid: f6b79dd18dce1d21a9dbfd0a06500743, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
