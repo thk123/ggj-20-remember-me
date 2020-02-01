@@ -13,6 +13,7 @@ public class SpawnRandomObjects : MonoBehaviour
         List<String> tags = new List<string>();
         tags.Add("Tree");
         tags.Add("Box");
+        tags.Add("Another");
 
         int numItems = 5;
         float minScale = 0.5f;
