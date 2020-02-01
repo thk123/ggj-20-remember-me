@@ -9,12 +9,20 @@ public class Dissapear : MonoBehaviour
     public KeyCode AlphaDown;
     public float Aalpha = 1.0f;
     Color OldColour;
+
+    public bool IsVisbile
+    {
+        get;
+        private set;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         var material = GetComponent<Renderer>().material;
         OldColour = material.color;
-        material.color = new Color(45, 45, 0, 1);
+        IsVisbile = false;
+        // material.color = new Color(45, 45, 0, 1);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -27,12 +35,30 @@ public class Dissapear : MonoBehaviour
 
     private void makeVisible()
     {
+        IsVisbile = true;
+        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        for (int i = 0; i < TreesObjects.Length; i++)
+        {
+            TreesObjects[i].GetComponent<Dissapear>().IsVisbile = true;
+            var material = TreesObjects[i].GetComponent<Renderer>().material;
+            var color = material.color;
+            //material.color = OldColour;
+            material.color = Color.red;
+            //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
+            //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    public void makeInvisible()
+    {
+        IsVisbile = false;
         var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
         for (int i = 0; i < TreesObjects.Length; i++)
         {
             var material = TreesObjects[i].GetComponent<Renderer>().material;
             var color = material.color;
-            material.color = OldColour;
+            //material.color = OldColour;
+            material.color = Color.white;
             //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
             //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
         }
