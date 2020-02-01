@@ -11,10 +11,12 @@ public class FirstPersonController : MonoBehaviour
     public float turnSpeed;
 
     public Camera face;
+    private Rigidbody _rigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody>();
         Cursor.lockState =CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -25,21 +27,21 @@ public class FirstPersonController : MonoBehaviour
         Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(yClamped(transform.forward) * MaxSpeed, Space.World);
+            _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed);
         } 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(yClamped(transform.forward * -1) * MaxSpeed, Space.World);
+            _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed * -1);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(yClamped(-1 * transform.right) * MaxSpeed, Space.World);
+            _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed * -1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(yClamped(transform.right) * MaxSpeed, Space.World);
+            _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed);
         }
     }
 
