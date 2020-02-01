@@ -76,9 +76,14 @@ public class Dialogue : MonoBehaviour
         }
         
         var characterName = CharacterNamesDataRef.CharacterName[CurrentSentence];
-        if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "???")
+        if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "Player_Initial")
+        {
+            characterName = playerName[0] + "...";
+        }
+        else if(CharacterNamesDataRef.CharacterName[CurrentSentence] == "Player_Name")
         {
             characterName = playerName;
+
         }
 
         string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
