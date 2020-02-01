@@ -504,6 +504,11 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2610145320321216956, guid: c81eea91336feb1f49f8603e35880fd7,
+        type: 3}
+      propertyPath: ThingToEnable
+      value: 
+      objectReference: {fileID: 1514680913}
     - target: {fileID: 4030345423939442048, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
       propertyPath: m_Name
@@ -648,7 +653,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514680912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c80586d52ba28244a39f03d2f9d3c92, type: 3}
   m_Name: 

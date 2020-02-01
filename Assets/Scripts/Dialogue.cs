@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Text;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dialogue : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class Dialogue : MonoBehaviour
     string CurrentEventRef;
 
     int CurrentSentence;
+
+    private bool PrintGibberish = true;
 
     void Awake()
     {
@@ -30,6 +35,11 @@ public class Dialogue : MonoBehaviour
     void InitializeState()
     {
         CurrentSentence = 0;
+    }
+
+    public void DisableGibberish()
+    {
+        PrintGibberish = false;
     }
 
     void GetReferences()
@@ -54,8 +64,25 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
-        DialogueControllerRef.DisplayDialogue(CharacterNamesDataRef.CharacterName[CurrentSentence], DialogueDataRef.Dialogue[CurrentSentence]);
+        string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
+        string sentence = PrintGibberish ? gibberish(trueSentence.Length) : trueSentence;
+
+        string trueName = CharacterNamesDataRef.CharacterName[CurrentSentence];
+        string name = PrintGibberish ? gibberish(trueName.Length) : trueName;
+        DialogueControllerRef.DisplayDialogue(name, sentence);
         CurrentSentence += 1;
+    }
+
+    String gibberish(int length)
+    {
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; ++i)
+        {
+            char randomChar = (char) Random.Range(32, 127);
+            sb.Append(randomChar);
+        }    
+
+        return sb.ToString();
     }
 }
 
