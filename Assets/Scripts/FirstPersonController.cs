@@ -13,12 +13,18 @@ public class FirstPersonController : MonoBehaviour
     public Camera face;
     private Rigidbody _rigidBody;
 
+    private float lastPlayedSound = 0;
+    private float soundPlayInterval = 1;
+
     bool playerDead = false;
+    AudioPlayer audioPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioPlayer = GetComponent<AudioPlayer>();
         _rigidBody = GetComponent<Rigidbody>();
+
         Cursor.lockState =CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -58,6 +64,14 @@ public class FirstPersonController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed);
+        }
+
+        if(_rigidBody.velocity.magnitude > 0 && Time.time > lastPlayedSound )
+        {
+            lastPlayedSound = Time.time + soundPlayInterval;
+            audioPlayer.playAudio();
+            print("Play");
+
         }
     }
 
