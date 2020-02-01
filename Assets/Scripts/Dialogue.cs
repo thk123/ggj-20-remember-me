@@ -3,6 +3,7 @@
 public class Dialogue : MonoBehaviour
 {
     public string DialogueFileNameEditor;
+    public string CharacterName;
 
     DialogueController DialogueControllerRef;
     DialogueData DialogueDataRef;
@@ -49,7 +50,7 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
-        DialogueControllerRef.DisplayDialogue(DialogueDataRef.Dialogue[CurrentSentence]);
+        DialogueControllerRef.DisplayDialogue(CharacterName , DialogueDataRef.Dialogue[CurrentSentence]);
         CurrentSentence += 1;
     }
 }

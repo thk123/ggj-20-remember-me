@@ -442,10 +442,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1198185062351797867, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 44.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868333371898998042, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueImage
+      objectReference: {fileID: 0}
     - target: {fileID: 1868333371898998053, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -332.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1868333373865973043, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
@@ -555,6 +565,31 @@ PrefabInstance:
     - target: {fileID: 1868333373865973055, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -715,6 +750,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920350476589053517, guid: ddf95a5deea189f4090f720a5f741e5c,
+        type: 3}
+      propertyPath: CharacterName
+      value: Jimmy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf95a5deea189f4090f720a5f741e5c, type: 3}
