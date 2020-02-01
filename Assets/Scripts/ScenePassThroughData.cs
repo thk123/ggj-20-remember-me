@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScenePassThroughData : MonoBehaviour
 {
     public string playerName;
-    public Level
+    //public Level
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
