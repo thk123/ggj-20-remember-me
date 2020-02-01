@@ -7,7 +7,6 @@ public class Dialogue : MonoBehaviour
 {
     public string DialogueFileNameEditor;
     public string CharacterNamesFileNameEditor;
-    public string CharacterName;
 
     DialogueController DialogueControllerRef;
     DialogueData DialogueDataRef;
@@ -15,10 +14,10 @@ public class Dialogue : MonoBehaviour
     string CurrentEventRef;
 
     int CurrentSentence;
-    ScenePassThroughData scenePassThroughDataRef;
 
 
     private bool PrintGibberish = true;
+    private string playerName;
 
     void Awake()
     {
@@ -37,8 +36,16 @@ public class Dialogue : MonoBehaviour
     void InitializeState()
     {
         CurrentSentence = 0;
-        scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
-
+        GameObject passthroughData = GameObject.FindGameObjectWithTag("ScenePassThroughData");
+        if(passthroughData != null)
+        {
+            playerName = passthroughData.GetComponent<ScenePassThroughData>().playerName;
+        }
+        else
+        {
+            playerName = "Charlie";
+            Debug.LogWarning("No passthrough data found... player name will be default");
+        }
     }
 
     public void DisableGibberish()
@@ -71,7 +78,7 @@ public class Dialogue : MonoBehaviour
         var characterName = CharacterNamesDataRef.CharacterName[CurrentSentence];
         if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "???")
         {
-            characterName = scenePassThroughDataRef.playerName;
+            characterName = playerName;
         }
 
         string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
