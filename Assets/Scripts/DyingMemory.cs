@@ -18,7 +18,7 @@ public class DyingMemory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dissapear.IsVisbile)
+        if (dissapear.Tauched)
         {
             lifetimeRemaining -= Time.deltaTime;
             if (lifetimeRemaining <= 0.0f)
