@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -20,9 +21,11 @@ public class CameraController : MonoBehaviour
     private Color defaultClearColor;
     private Camera _camera;
 
+    private bool cameraControlsActivated = false;
+
     void Update()
     {
-        if (!playerDead)
+        if (!playerDead && cameraControlsActivated)
         {
             moveCamera();
         }
@@ -51,7 +54,6 @@ public class CameraController : MonoBehaviour
     }
 
     void Start()
-
     {
         _camera = GetComponent<Camera>();
         defaultClearColor = _camera.backgroundColor;
@@ -80,5 +82,10 @@ public class CameraController : MonoBehaviour
         }
 
         return Mathf.Clamp(angle, min, max);
+    }
+
+    public void setControlsActive(bool controlsActive)
+    {
+        this.cameraControlsActivated = controlsActive;
     }
 }
