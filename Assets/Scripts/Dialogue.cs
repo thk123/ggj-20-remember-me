@@ -12,6 +12,8 @@ public class Dialogue : MonoBehaviour
     string CurrentEventRef;
 
     int CurrentSentence;
+    ScenePassThroughData scenePassThroughDataRef;
+
 
     void Awake()
     {
@@ -30,6 +32,8 @@ public class Dialogue : MonoBehaviour
     void InitializeState()
     {
         CurrentSentence = 0;
+        scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
+
     }
 
     void GetReferences()
@@ -54,7 +58,13 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
-        DialogueControllerRef.DisplayDialogue(CharacterNamesDataRef.CharacterName[CurrentSentence], DialogueDataRef.Dialogue[CurrentSentence]);
+        var characterName = CharacterNamesDataRef.CharacterName[CurrentSentence];
+        if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "???")
+        {
+            characterName = scenePassThroughDataRef.playerName;
+        }
+
+        DialogueControllerRef.DisplayDialogue(characterName, DialogueDataRef.Dialogue[CurrentSentence]);
         CurrentSentence += 1;
     }
 }

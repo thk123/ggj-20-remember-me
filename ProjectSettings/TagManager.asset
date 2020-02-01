@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Another
   - Grass
+  - ScenePassThroughData
   layers:
   - Default
   - TransparentFX
