@@ -13,6 +13,8 @@ public class FirstPersonController : MonoBehaviour
     public Camera face;
     private Rigidbody _rigidBody;
 
+    bool playerDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,25 @@ public class FirstPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playerDead)
+        {
+            movePlayer();
+        }
+
+    }
+
+    public void setPlayerDead()
+    {
+        playerDead = true;
+    }
+
+    void movePlayer()
+    {
         Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
             _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed);
-        } 
+        }
         if (Input.GetKey(KeyCode.S))
         {
             _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed * -1);
