@@ -18,4 +18,13 @@ public class PlayerController : MonoBehaviour
         firstPersonControllerRef.setPlayerDead();
         cameraControllerRef.SetPlayerDead();
     }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Player  collision");
+        if (other.gameObject.GetComponent<Dissapear>() != null)
+        {
+            cameraControllerRef.setControlsActive(true);
+        }
+    }
 }
