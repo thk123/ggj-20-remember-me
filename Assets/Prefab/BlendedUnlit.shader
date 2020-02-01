@@ -4,6 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_Blend ("Blend value", Range(0,1)) = 0.0
+		_TColor ("Target Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -39,6 +40,7 @@
             float4 _SecTex_ST;
             
             half _Blend;
+            float4 _TColor;
 
             v2f vert (appdata v)
             {
@@ -53,7 +55,7 @@
             {
                 // sample the texture
                 fixed4 t1 = float4(1, 1, 1, 1);
-                fixed4 t2 = tex2D (_MainTex, i.uv);
+                fixed4 t2 = tex2D (_MainTex, i.uv) * _TColor;
                 fixed4 col = lerp (t1, t2, _Blend);
                 // apply fog
                 // UNITY_APPLY_FOG(i.fogCoord, col);
