@@ -494,11 +494,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1868333372598134750, guid: c81eea91336feb1f49f8603e35880fd7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2391591038912510225, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}
       propertyPath: m_Material
@@ -665,7 +660,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueFileNameEditor: Story1
   CharacterNamesFileNameEditor: CharacterNames1
-  CharacterName: 
 --- !u!1001 &1691121949
 PrefabInstance:
   m_ObjectHideFlags: 0
