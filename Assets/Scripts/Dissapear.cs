@@ -20,8 +20,6 @@ public class Dissapear : MonoBehaviour
     void Start()
     {
         var material = GetComponent<Renderer>().material;
-        OldColour = material.color;
-        // material.color = new Color(45, 45, 0, 1);
         fadeValue = 0.0f;
 
     }
