@@ -26,8 +26,18 @@ public class Dissapear : MonoBehaviour
 
     private void makeVisible()
     {
-        var material = GetComponent<Renderer>().material;
-        material.color = new Color(1.0f, 0, 0, 1);
+       // var material = GetComponent<Renderer>().material;
+        //material.color = new Color(1.0f, 0, 0, 1);
+
+        var TreesObjects = GameObject.FindGameObjectsWithTag("Tree");
+        for (int i = 0; i < TreesObjects.Length; i++)
+        {
+            var material = TreesObjects[i].GetComponent<Renderer>().material;
+            var color = material.color;
+            material.color = new Color(1, 1, 1, 1);
+            //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
+            //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +45,7 @@ public class Dissapear : MonoBehaviour
     {
         var material = GetComponent<Renderer>().material;
         var color = material.color;
-        if (Input.GetKeyDown(AlphaUp)) { material.color = new Color(1, 0, 0, 1); }
-        if (Input.GetKeyDown(AlphaDown)) { material.color = new Color(255, 255, 255, 1); }
+        if (Input.GetKeyDown(AlphaUp)) { Aalpha++; material.color = new Color(1, 0, 0, Aalpha); }
+        if (Input.GetKeyDown(AlphaDown)) { Aalpha--;  material.color = new Color(255, 255, 255, Aalpha); }
     }
 }
