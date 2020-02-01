@@ -11,31 +11,19 @@ public class Dissapear : MonoBehaviour
     public int counter = 0;
     public bool Tauched;
     Color OldColour;
-<<<<<<< Updated upstream
+    
 
-    public bool IsVisbile
-    {
-        get;
-        private set;
-    }
-
-=======
     Color ChangeInAlpha;
->>>>>>> Stashed changes
+
+    private float fadeValue;
     // Start is called before the first frame update
     void Start()
     {
         var material = GetComponent<Renderer>().material;
         OldColour = material.color;
-<<<<<<< Updated upstream
-        IsVisbile = false;
         // material.color = new Color(45, 45, 0, 1);
-=======
-        ChangeInAlpha = new Color(255, 255, 255, 1);
-        ChangeInAlpha.a = 0.01f;
-        material.color = ChangeInAlpha;
-        
->>>>>>> Stashed changes
+        fadeValue = 0.0f;
+
     }
 
     private void OnCollisionEnter(Collision other)
@@ -48,37 +36,27 @@ public class Dissapear : MonoBehaviour
 
     private void makeVisible()
     {
-        IsVisbile = true;
         var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
         for (int i = 0; i < TreesObjects.Length; i++)
         {
-            TreesObjects[i].GetComponent<Dissapear>().IsVisbile = true;
-            var material = TreesObjects[i].GetComponent<Renderer>().material;
-            var color = material.color;
-            //material.color = OldColour;
-            material.color = Color.red;
-            //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
-            //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
+            TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
         }
     }
 
     public void makeInvisible()
     {
-        IsVisbile = false;
-        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        for (int i = 0; i < TreesObjects.Length; i++)
-        {
-<<<<<<< Updated upstream
-            var material = TreesObjects[i].GetComponent<Renderer>().material;
-            var color = material.color;
-            //material.color = OldColour;
-            material.color = Color.white;
-=======
-            TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
->>>>>>> Stashed changes
-            //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
-            //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
-        }
+        // IsVisbile = false;
+        // var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        // for (int i = 0; i < TreesObjects.Length; i++)
+        // {
+        //     var material = TreesObjects[i].GetComponent<Renderer>().material;
+        //     var color = material.color;
+        //     //material.color = OldColour;
+        //     material.color = Color.white;
+        //     TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
+        //     //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
+        //     //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
+        // }
     }
     // Update is called once per frame
     void Update()
@@ -90,13 +68,13 @@ public class Dissapear : MonoBehaviour
         {
             if (counter > 100)
             {
-                material.color = OldColour;
+                material.SetFloat("_Blend", 1.0f);
             }
             else
             {
                 counter++;
-                ChangeInAlpha.a += 0.01f;
-                material.color = ChangeInAlpha;
+                fadeValue += 0.01f;
+                material.SetFloat("_Blend",fadeValue);
             }
         }
     }

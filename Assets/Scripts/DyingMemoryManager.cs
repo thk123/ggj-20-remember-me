@@ -16,7 +16,7 @@ public class DyingMemoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dyingMemories.All(memory => memory.GetComponent<Dissapear>().IsVisbile))
+        if (dyingMemories.All(memory => memory.GetComponent<Dissapear>().Tauched))
         {
             Debug.Log("All memories visible!!");    
         }
