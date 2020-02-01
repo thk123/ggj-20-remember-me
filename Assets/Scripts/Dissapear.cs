@@ -7,8 +7,8 @@ public class Dissapear : MonoBehaviour
 {
     public KeyCode AlphaUp;
     public KeyCode AlphaDown;
-    public float Aalpha = 1.0f;
-    public int counter = 0;
+    private float Aalpha = 1.0f;
+    private int counter = 0;
     public bool Tauched;
     Color OldColour;
     
