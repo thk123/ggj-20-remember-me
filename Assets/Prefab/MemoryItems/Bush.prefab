@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6936407287493267249, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
       propertyPath: m_Name
-      value: Bench Variant
+      value: Bush
       objectReference: {fileID: 0}
     - target: {fileID: 6936407287493267252, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
@@ -89,5 +89,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7569823506201152441, guid: d295acb3e7537c73ea4ecbcdb52215cc,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6936407287493267248, guid: faf9ca36f746734c8a6961cd0a762e8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: faf9ca36f746734c8a6961cd0a762e8e, type: 3}

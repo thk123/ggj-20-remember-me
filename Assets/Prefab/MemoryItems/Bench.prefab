@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6936407287493267253}
   - component: {fileID: 6936407287493267254}
   - component: {fileID: 6936407287493267255}
-  - component: {fileID: 6936407287493267248}
   - component: {fileID: 6936407287493267259}
   m_Layer: 0
   m_Name: Bench
@@ -121,19 +120,6 @@ MonoBehaviour:
   AlphaUp: 0
   AlphaDown: 0
   Tauched: 0
---- !u!114 &6936407287493267248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6936407287493267249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4df2ca829458ec3b8baa28aa3e983a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lifetime: 10
 --- !u!33 &6936407287493267259
 MeshFilter:
   m_ObjectHideFlags: 0
