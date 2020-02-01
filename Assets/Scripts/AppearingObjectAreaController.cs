@@ -11,6 +11,7 @@ public class AppearingObjectAreaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Renderer>().enabled = false;    
         instantiatedObjects = new List<GameObject>();
         InstantiateAllObjects();
     }
