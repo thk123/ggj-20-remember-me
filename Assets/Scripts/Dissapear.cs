@@ -7,8 +7,8 @@ public class Dissapear : MonoBehaviour
 {
     public KeyCode AlphaUp;
     public KeyCode AlphaDown;
-    public float Aalpha = 1.0f;
-    public int counter = 0;
+    private float Aalpha = 1.0f;
+    private int counter = 0;
     public bool Tauched;
     Color OldColour;
     
@@ -36,19 +36,19 @@ public class Dissapear : MonoBehaviour
 
     private void makeVisible()
     {
-        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        for (int i = 0; i < TreesObjects.Length; i++)
+        var Objects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        for (int i = 0; i < Objects.Length; i++)
         {
-            TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
+            Objects[i].GetComponent<Dissapear>().Tauched = true;
         }
     }
 
     public void makeInvisible()
     {
-        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        for (int i = 0; i < TreesObjects.Length; i++)
+        var Objects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        for (int i = 0; i < Objects.Length; i++)
         {
-            TreesObjects[i].GetComponent<Dissapear>().Tauched = false;
+            Objects[i].GetComponent<Dissapear>().Tauched = false;
         }
     }
     // Update is called once per frame
