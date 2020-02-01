@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20003b58fb67bbf4bb2bde23d27d6cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameTextEditor: {fileID: 0}
   DialogueTextEditor: {fileID: 0}
   AnimatorEditor: {fileID: 0}
