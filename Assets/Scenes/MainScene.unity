@@ -481,11 +481,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MemoryTree (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 8174383206332392250, guid: e266c1e67f2b8331ca48c7e0837e0965,
-        type: 3}
-      propertyPath: m_TagString
-      value: Box
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e266c1e67f2b8331ca48c7e0837e0965, type: 3}
 --- !u!1001 &861544577

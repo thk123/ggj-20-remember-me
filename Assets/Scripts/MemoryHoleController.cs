@@ -51,13 +51,13 @@ public class MemoryHoleController : MonoBehaviour
         if (isUserInArea)
         {
             Vector2 offsetAroundPlayer = Random.insideUnitCircle * Random.Range(20, 50);
-            randomCoordinate = new Vector3(origin.x + offsetAroundPlayer.x, origin.y, origin.z + offsetAroundPlayer.y);
+            randomCoordinate = new Vector3(origin.x + offsetAroundPlayer.x, 0.0f, origin.z + offsetAroundPlayer.y);
         }
         else
         {
             Vector3 range = transform.localScale / 2.0f;
             Vector3 randomRange = new Vector3(Random.Range(-range.x, range.x),
-                                              Random.Range(-range.y, range.y),
+                                              0.0f,
                                               Random.Range(-range.z, range.z));
             randomCoordinate = origin + randomRange;
         }
@@ -72,19 +72,19 @@ public class MemoryHoleController : MonoBehaviour
         scaleIncrement = size / numIncrements;
         if (isShrinking)
         {
-            startingScale = new Vector3(size, size, size);
+            startingScale = new Vector3(size, 0.01f, size);
             scaleIncrement = -scaleIncrement;
         }
         else
         {
-            startingScale = new Vector3(0, 0, 0);
+            startingScale = new Vector3(0, 0.01f, 0);
         }
 
         memoryHole.transform.localScale = startingScale;
         for (int i=0; i< numIncrements; i++)
         {
             Vector3 ls = memoryHole.transform.localScale;
-            memoryHole.transform.localScale = new Vector3(ls.x + scaleIncrement, ls.y + scaleIncrement, ls.z+scaleIncrement);
+            memoryHole.transform.localScale = new Vector3(ls.x + scaleIncrement, 0.01f, ls.z+scaleIncrement);
             yield return new WaitForSeconds(timeIncrement);
 
         }
