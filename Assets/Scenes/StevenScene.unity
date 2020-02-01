@@ -344,31 +344,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8938187739488542845, guid: ac880ebe308bd9af984467a9d9ecd2cf,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac880ebe308bd9af984467a9d9ecd2cf, type: 3}
---- !u!1 &1537334261 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8938187739488542845, guid: ac880ebe308bd9af984467a9d9ecd2cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1470425822}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1537334268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537334261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4670ecd20981faa4e901f87497468ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1662045485 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1868333373651570856, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,

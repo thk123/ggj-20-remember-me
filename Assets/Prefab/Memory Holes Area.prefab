@@ -106,4 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5061adf50568e7f4b956730a405ef65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MemoryHole: {fileID: 0}
+  MemoryHole: {fileID: 3758929334816143920, guid: 7b554f66678b7574e96ca3b1cc4172e8,
+    type: 3}
+  timeBetweenHoles: 1
+  size: 4
+  timeToResizeHoles: 6
+  numIncrements: 100
