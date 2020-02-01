@@ -19,38 +19,35 @@ public class Dissapear : MonoBehaviour
 
     private Material[] materials;
 
+    AppearingObjectAreaController appearingObjectAreaControllerRef;
+
     // Start is called before the first frame update
     void Start()
     {
+
         materials = GetComponent<Renderer>().materials;
         fadeValue = 0.0f;
+    }
+
+    public void setParentSpawner(AppearingObjectAreaController appearingObjectAreaControllerNew)
+    {
+        appearingObjectAreaControllerRef = appearingObjectAreaControllerNew;
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.GetComponent<FirstPersonController>() != null)
         {
-            makeVisible();
+            SetVisibility(true);
+            StartCoroutine(appearingObjectAreaControllerRef.MakeAllOthersInGroupVisible());
         }
     }
 
-    private void makeVisible()
+    public void SetVisibility( bool newVisibility)
     {
-        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        for (int i = 0; i < TreesObjects.Length; i++)
-        {
-            TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
-        }
+        Tauched = newVisibility;
     }
 
-    public void makeInvisible()
-    {
-        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        for (int i = 0; i < TreesObjects.Length; i++)
-        {
-            TreesObjects[i].GetComponent<Dissapear>().Tauched = false;
-        }
-    }
     // Update is called once per frame
     void Update()
     {
