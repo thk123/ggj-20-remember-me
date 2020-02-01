@@ -265,6 +265,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7281433ca7a588753a7603903cb90ee0, type: 3}
+--- !u!114 &1341926154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868333372025249157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1470425822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,12 +716,12 @@ PrefabInstance:
     - target: {fileID: 3920350476589053516, guid: ddf95a5deea189f4090f720a5f741e5c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3920350476589053516, guid: ddf95a5deea189f4090f720a5f741e5c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -33.4
       objectReference: {fileID: 0}
     - target: {fileID: 3920350476589053516, guid: ddf95a5deea189f4090f720a5f741e5c,
         type: 3}
@@ -756,6 +768,11 @@ PrefabInstance:
       propertyPath: CharacterName
       value: Jimmy
       objectReference: {fileID: 0}
+    - target: {fileID: 3920350476589053518, guid: ddf95a5deea189f4090f720a5f741e5c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a62d84e731775094497c284a48594fd1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf95a5deea189f4090f720a5f741e5c, type: 3}
 --- !u!1001 &7650255190509931137
@@ -780,6 +797,11 @@ PrefabInstance:
       propertyPath: AnimatorEditor
       value: 
       objectReference: {fileID: 463384739}
+    - target: {fileID: 7650255190872966446, guid: dab3781838b48bb43a6cd721060f55ac,
+        type: 3}
+      propertyPath: NameTextEditor
+      value: 
+      objectReference: {fileID: 1341926154}
     - target: {fileID: 7650255190872966447, guid: dab3781838b48bb43a6cd721060f55ac,
         type: 3}
       propertyPath: m_LocalPosition.x
