@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5900380869233964140}
   - component: {fileID: 5900380869233964141}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: WhiteLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
