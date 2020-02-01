@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-391726517991021583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822760669047104098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4df2ca829458ec3b8baa28aa3e983a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 10
 --- !u!1001 &3427782705202612951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,7 +44,7 @@ PrefabInstance:
     - target: {fileID: 6188315465346148533, guid: 0fa9b225727b8c6d8a8f2651927ca2e7,
         type: 3}
       propertyPath: m_Name
-      value: Bush Variant
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 6188315465346148542, guid: 0fa9b225727b8c6d8a8f2651927ca2e7,
         type: 3}
@@ -96,3 +109,9 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa9b225727b8c6d8a8f2651927ca2e7, type: 3}
+--- !u!1 &8822760669047104098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6188315465346148533, guid: 0fa9b225727b8c6d8a8f2651927ca2e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3427782705202612951}
+  m_PrefabAsset: {fileID: 0}
