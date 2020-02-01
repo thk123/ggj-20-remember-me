@@ -25,7 +25,7 @@ public class Dissapear : MonoBehaviour
 
     private void makeVisible()
     {
-        var TreesObjects = GameObject.FindGameObjectsWithTag("Tree");
+        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
         for (int i = 0; i < TreesObjects.Length; i++)
         {
             var material = TreesObjects[i].GetComponent<Renderer>().material;
