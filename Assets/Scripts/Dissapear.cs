@@ -45,7 +45,10 @@ public class Dissapear : MonoBehaviour
         if(other.gameObject.GetComponent<FirstPersonController>() != null)
         {
             SetVisibility(true);
-            StartCoroutine(appearingObjectAreaControllerRef.MakeAllOthersInGroupVisible());
+            if (appearingObjectAreaControllerRef != null)
+            {
+                StartCoroutine(appearingObjectAreaControllerRef.MakeAllOthersInGroupVisible());
+            }
         }
     }
 

@@ -29,7 +29,7 @@ public class OpeningSceneController : MonoBehaviour
         if(NameInputField.text.Length > 5 && NameInputField.text != errorMessage)
         {
             scenePassThroughDataRef.playerName = NameInputField.text;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("TutorialScene");
         }
         else
         {
