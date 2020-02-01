@@ -548,12 +548,12 @@ PrefabInstance:
     - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -500
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4, type: 3}
@@ -698,6 +698,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920350476589053517, guid: ddf95a5deea189f4090f720a5f741e5c,
+        type: 3}
+      propertyPath: DialogueFileNameEditor
+      value: Story1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920350476589053517, guid: ddf95a5deea189f4090f720a5f741e5c,
+        type: 3}
+      propertyPath: CharacterNamesFileNameEditor
+      value: CharacterNames1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf95a5deea189f4090f720a5f741e5c, type: 3}
@@ -852,5 +862,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppearingObjectArea
       objectReference: {fileID: 0}
+    - target: {fileID: 8110541901481974677, guid: 1b490bd0e901aaa4eb6f920bc578d4a4,
+        type: 3}
+      propertyPath: ObjectToInstantiate
+      value: 
+      objectReference: {fileID: 6188315465346148533, guid: 0fa9b225727b8c6d8a8f2651927ca2e7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b490bd0e901aaa4eb6f920bc578d4a4, type: 3}

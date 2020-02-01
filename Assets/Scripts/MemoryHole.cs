@@ -5,6 +5,7 @@ using UnityEngine;
 public class MemoryHole : MonoBehaviour
 {
     PlayerController playerControllerRef;
+    ScreenFade AcessFadeScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class MemoryHole : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        AcessFadeScript.FadeBool = true;
         print("your dead");
         playerControllerRef.playerDead();
     }
