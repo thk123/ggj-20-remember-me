@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6936407287493267249, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
       propertyPath: m_Name
-      value: Bush
+      value: BushCollider
       objectReference: {fileID: 0}
     - target: {fileID: 6936407287493267252, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
@@ -28,6 +28,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7569823506201152441, guid: d295acb3e7537c73ea4ecbcdb52215cc,
         type: 3}
+    - target: {fileID: 6936407287493267254, guid: faf9ca36f746734c8a6961cd0a762e8e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6936407287493267258, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
       propertyPath: m_LocalPosition.x
