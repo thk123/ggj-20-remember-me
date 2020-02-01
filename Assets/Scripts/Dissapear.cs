@@ -34,7 +34,7 @@ public class Dissapear : MonoBehaviour
         {
             var material = TreesObjects[i].GetComponent<Renderer>().material;
             var color = material.color;
-            material.color = new Color(1, 1, 1, 1);
+            material.color = new Color(1, 0, 0, 1);
             //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
             //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
         }
