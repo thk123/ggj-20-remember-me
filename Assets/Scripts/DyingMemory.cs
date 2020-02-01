@@ -23,7 +23,7 @@ public class DyingMemory : MonoBehaviour
             lifetimeRemaining -= Time.deltaTime;
             if (lifetimeRemaining <= 0.0f)
             {
-                dissapear.makeInvisible();
+                dissapear.SetVisibility(false);
                 lifetimeRemaining = Lifetime;
             }
         }
