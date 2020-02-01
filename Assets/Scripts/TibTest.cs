@@ -6,13 +6,13 @@ public class TibTest : MonoBehaviour
 {
     Color colorOld;
     // Start is called before the first frame update
-    public int counter =0;
+    public int counter = 0;
     void Start()
     {
         var TreesObjects = GameObject.FindGameObjectsWithTag("Tree");
         var material = TreesObjects[2].GetComponent<Renderer>().material;
         colorOld = material.color;
-        
+
 
     }
 
@@ -30,7 +30,8 @@ public class TibTest : MonoBehaviour
                 //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
             }
         }
-        if (counter > 2000) {
+        if (counter > 2000)
+        {
             var TreesObjects = GameObject.FindGameObjectsWithTag("Tree");
             for (int i = 0; i < TreesObjects.Length; i++)
             {

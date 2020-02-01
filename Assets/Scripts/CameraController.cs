@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     private Color defaultClearColor;
     private Camera _camera;
 
-    private bool cameraControlsActivated = false;
+    private bool cameraControlsActivated = true;
 
     void Update()
     {
