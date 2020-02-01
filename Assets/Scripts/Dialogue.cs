@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Text;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dialogue : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class Dialogue : MonoBehaviour
     int CurrentSentence;
     ScenePassThroughData scenePassThroughDataRef;
 
+
+    private bool PrintGibberish = true;
 
     void Awake()
     {
@@ -34,6 +39,11 @@ public class Dialogue : MonoBehaviour
         CurrentSentence = 0;
         scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
 
+    }
+
+    public void DisableGibberish()
+    {
+        PrintGibberish = false;
     }
 
     void GetReferences()
@@ -57,15 +67,33 @@ public class Dialogue : MonoBehaviour
             CurrentSentence = 0;
             return;
         }
-
+        
         var characterName = CharacterNamesDataRef.CharacterName[CurrentSentence];
         if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "???")
         {
             characterName = scenePassThroughDataRef.playerName;
         }
 
-        DialogueControllerRef.DisplayDialogue(characterName, DialogueDataRef.Dialogue[CurrentSentence]);
+        string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
+        string sentence = PrintGibberish ? gibberish(trueSentence.Length) : trueSentence;
+
+        string name = PrintGibberish ? gibberish(characterName.Length) : characterName;
+
+        DialogueControllerRef.DisplayDialogue(name, sentence);
+
         CurrentSentence += 1;
+    }
+
+    String gibberish(int length)
+    {
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; ++i)
+        {
+            char randomChar = (char) Random.Range(32, 127);
+            sb.Append(randomChar);
+        }    
+
+        return sb.ToString();
     }
 }
 
