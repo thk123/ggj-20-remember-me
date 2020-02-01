@@ -27,10 +27,10 @@ public class ScreenFade : MonoBehaviour
         if (FadeBool == true)
         {
             ColourChange.a += 0.01f;
-            TextboxColourChange.a += 0.1f;
+            //TextboxColourChange.a += 0.1f;
             GetComponent<Image>().color = ColourChange;
-            Text.color = ColourChange;
-            DialogueBox.color = TextboxColourChange;
+            //Text.color = ColourChange;
+            //DialogueBox.color = TextboxColourChange;
             WaitTime += Time.deltaTime;
             //SceneManager.LoadScene("TibScene");
             if (WaitTime > 2) { Application.LoadLevel(Application.loadedLevel); }
