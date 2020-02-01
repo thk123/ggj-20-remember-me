@@ -190,12 +190,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ccb016817524dbbb935386b3767661, type: 3}
---- !u!95 &463384739 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1868333371898998054, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1868333372025249157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1147625627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -556,6 +550,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073444646215027140, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -500
+      objectReference: {fileID: 0}
     - target: {fileID: 8777008616436620625, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -581,8 +595,34 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1868333371898998054, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4, type: 3}
+--- !u!1 &1868333372025249158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7606611877895952553, guid: 0fa04a2a8fcbb304a9dfe6e0f344f4f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868333372025249157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1868333372025249159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868333372025249158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 352e435b2c13d044cb74b9aec1a6a898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3591716623581114757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -590,27 +630,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3591716623003078361, guid: ba33ed4726299284db6f652c036a5d15,
-        type: 3}
-      propertyPath: MemoryHole
-      value: 
-      objectReference: {fileID: 3758929334816143920, guid: 7b554f66678b7574e96ca3b1cc4172e8,
-        type: 3}
-    - target: {fileID: 3591716623003078361, guid: ba33ed4726299284db6f652c036a5d15,
-        type: 3}
-      propertyPath: numIncrements
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3591716623003078361, guid: ba33ed4726299284db6f652c036a5d15,
-        type: 3}
-      propertyPath: size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3591716623003078361, guid: ba33ed4726299284db6f652c036a5d15,
-        type: 3}
-      propertyPath: timeBetweenHoles
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3591716623003078366, guid: ba33ed4726299284db6f652c036a5d15,
         type: 3}
       propertyPath: m_Name
@@ -773,7 +792,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AnimatorEditor
       value: 
-      objectReference: {fileID: 463384739}
+      objectReference: {fileID: 0}
     - target: {fileID: 7650255190872966446, guid: dab3781838b48bb43a6cd721060f55ac,
         type: 3}
       propertyPath: NameTextEditor
