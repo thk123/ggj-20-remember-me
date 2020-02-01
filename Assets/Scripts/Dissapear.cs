@@ -8,11 +8,13 @@ public class Dissapear : MonoBehaviour
     public KeyCode AlphaUp;
     public KeyCode AlphaDown;
     public float Aalpha = 1.0f;
+    Color OldColour;
     // Start is called before the first frame update
     void Start()
     {
         var material = GetComponent<Renderer>().material;
-        material.color = new Color(1, 1, 1, 1);
+        OldColour = material.color;
+        material.color = new Color(45, 45, 0, 1);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -30,7 +32,7 @@ public class Dissapear : MonoBehaviour
         {
             var material = TreesObjects[i].GetComponent<Renderer>().material;
             var color = material.color;
-            material.color = new Color(1, 0, 0, 1);
+            material.color = OldColour;
             //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
             //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
         }
