@@ -14,8 +14,17 @@ public class CameraController : MonoBehaviour
     public float frameCounter = 20;
     Quaternion originalRotation;
 
+    bool playerDead = false;
+
     void Update()
     {
+        if (!playerDead)
+        {
+            moveCamera();
+        }
+    }
+
+    void moveCamera() {
         //Gets rotational input from the mouse
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
         rotationX += Input.GetAxis("Mouse X") * sensitivityX;
@@ -31,11 +40,16 @@ public class CameraController : MonoBehaviour
         //Rotate
         transform.localRotation = originalRotation * xQuaternion * yQuaternion;
     }
-    
+
     void Start()
 
     {
         originalRotation = transform.localRotation;
+    }
+
+    public void SetPlayerDead()
+    {
+        playerDead = true;
     }
 
     static float ClampAngle(float angle, float min, float max)

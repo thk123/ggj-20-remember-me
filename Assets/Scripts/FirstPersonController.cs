@@ -11,10 +11,14 @@ public class FirstPersonController : MonoBehaviour
     public float turnSpeed;
 
     public Camera face;
+    private Rigidbody _rigidBody;
+
+    bool playerDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody>();
         Cursor.lockState =CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -22,24 +26,43 @@ public class FirstPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playerDead)
+        {
+            movePlayer();
+        }
+
+    }
+
+    public void setPlayerDead()
+    {
+        playerDead = true;
+    }
+
+    void movePlayer()
+    {
         Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * MaxSpeed, Space.Self);
-        } 
+            _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed);
+        }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * MaxSpeed, Space.Self);
+            _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed * -1);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * MaxSpeed, Space.Self);
+            _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed * -1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * MaxSpeed, Space.Self);
+            _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed);
         }
+    }
+
+    Vector3 yClamped(Vector3 inVector)
+    {
+        return new Vector3(inVector.x, 0.0f, inVector.z);
     }
 }
