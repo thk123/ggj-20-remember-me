@@ -38,4 +38,22 @@ public class SpawnRandomObjects : MonoBehaviour
             }
         }
     }
+    
+     [MenuItem("Assets/CreateMaterialFromTexture")]
+     private static void CreateBlendedMaterial()
+     {
+         // Do something with you variable
+         Texture2D tex = (Texture2D) Selection.activeObject;
+         Material newMaterial = new Material(Shader.Find("Unlit/BlendedUnlit"));
+         newMaterial.mainTexture = tex;
+         Debug.Log("Creating asset: " + "Assets/Materials/BlendedMaterials/" + tex.name + "Blended.mat");
+         AssetDatabase.CreateAsset(newMaterial, "Assets/Materials/BlendedMaterials/" + tex.name + "Blended.mat");
+     }
+     
+     [MenuItem("Assets/CreateMaterialFromTexture", true)]
+     private static bool CreateBlendedMaterialValidate()
+     {
+         // This returns true when the selected object is a Variable (the menu item will be disabled otherwise).
+         return Selection.activeObject is Texture2D;
+     }
 }
