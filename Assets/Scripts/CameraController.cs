@@ -16,11 +16,20 @@ public class CameraController : MonoBehaviour
 
     bool playerDead = false;
 
+    public bool enabledDebug = true;
+    private Color defaultClearColor;
+    private Camera _camera;
+
     void Update()
     {
         if (!playerDead)
         {
             moveCamera();
+        }
+
+        if (enabledDebug)
+        {
+            _camera.backgroundColor = Input.GetKey(KeyCode.V) ? Color.red : defaultClearColor;
         }
     }
 
@@ -44,6 +53,8 @@ public class CameraController : MonoBehaviour
     void Start()
 
     {
+        _camera = GetComponent<Camera>();
+        defaultClearColor = _camera.backgroundColor;
         originalRotation = transform.localRotation;
     }
 
