@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1868333371898998053}
   - component: {fileID: 1868333371898998055}
   - component: {fileID: 1868333371898998052}
-  - component: {fileID: 1868333371898998054}
   m_Layer: 5
   m_Name: DialogueImage
   m_TagString: Untagged
@@ -75,25 +74,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &1868333371898998054
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868333371898998042}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 01627031997aa6240bdfabd77da45474, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1868333373651570862
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +415,7 @@ GameObject:
   - component: {fileID: 8073444646215027140}
   - component: {fileID: 1332496078347267305}
   - component: {fileID: 3732295158796634680}
+  - component: {fileID: 1868333372025249159}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -499,6 +480,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1868333372025249159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606611877895952553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 352e435b2c13d044cb74b9aec1a6a898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8515080127224460711
 GameObject:
   m_ObjectHideFlags: 0
