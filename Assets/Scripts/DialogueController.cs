@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
+    public TextMeshProUGUI NameTextEditor;
     public TextMeshProUGUI DialogueTextEditor;
     public Animator AnimatorEditor;
 
@@ -17,8 +18,9 @@ public class DialogueController : MonoBehaviour
         AnimatorEditor.SetBool("IsDialogueOpen", false);
     }
 
-    public void DisplayDialogue(string sentence)
+    public void DisplayDialogue(string name, string sentence)
     {
+        NameTextEditor.text = name;
         StopAllCoroutines();
         StartCoroutine(AnimateSentence(sentence));
     }
