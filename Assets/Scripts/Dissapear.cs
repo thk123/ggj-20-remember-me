@@ -20,8 +20,6 @@ public class Dissapear : MonoBehaviour
     void Start()
     {
         var material = GetComponent<Renderer>().material;
-        OldColour = material.color;
-        // material.color = new Color(45, 45, 0, 1);
         fadeValue = 0.0f;
 
     }
@@ -45,18 +43,11 @@ public class Dissapear : MonoBehaviour
 
     public void makeInvisible()
     {
-        // IsVisbile = false;
-        // var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        // for (int i = 0; i < TreesObjects.Length; i++)
-        // {
-        //     var material = TreesObjects[i].GetComponent<Renderer>().material;
-        //     var color = material.color;
-        //     //material.color = OldColour;
-        //     material.color = Color.white;
-        //     TreesObjects[i].GetComponent<Dissapear>().Tauched = true;
-        //     //for(int obj, obj <10, obj++) { TreesObjects[obj].GetComponent<MeshRenderer>().enabled = false; }//obj.GetComponent(TreeAppear).Visible = true; }
-        //     //TreesObjects[i].GetComponent<MeshRenderer>().enabled = false;
-        // }
+        var TreesObjects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+        for (int i = 0; i < TreesObjects.Length; i++)
+        {
+            TreesObjects[i].GetComponent<Dissapear>().Tauched = false;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -77,5 +68,19 @@ public class Dissapear : MonoBehaviour
                 material.SetFloat("_Blend",fadeValue);
             }
         }
+        else
+        {
+            if (counter > 0)
+            {
+                counter--;
+                fadeValue -= 0.01f;
+                material.SetFloat("_Blend",fadeValue);
+            }
+            else
+            {
+                material.SetFloat("_Blend", 0.0f);
+            }
+        }
+
     }
 }
