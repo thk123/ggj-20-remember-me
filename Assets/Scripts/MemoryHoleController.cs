@@ -6,8 +6,13 @@ public class MemoryHoleController : MonoBehaviour
 {
     public GameObject MemoryHole;
     float nextInstantiate;
-    float timeBetweenHoles = 2f;
+    public float timeBetweenHoles = 2f;
+    public int size = 5;
+    public int timeToResizeHoles = 6;
+    public float numIncrements = 10f;
+
     bool isShrinking = false;
+    bool isUserInArea = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,36 +30,62 @@ public class MemoryHoleController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        print("entered zone");
+        isUserInArea = true;
+    }
+
+    //When the Primitive exits the collision, it will change Color
+    private void OnTriggerExit(Collider other)
+    {
+        print("exit zone");
+        isUserInArea = false;
+    }
+
     IEnumerator CreateMemoryHole(bool isShrinking)
     {
+        Vector3 randomCoordinate;
         Vector3 origin = transform.position;
-        Vector3 range = transform.localScale / 2.0f;
-        Vector3 randomRange = new Vector3(Random.Range(-range.x, range.x),
-                                          Random.Range(-range.y, range.y),
-                                          Random.Range(-range.z, range.z));
-        Vector3 randomCoordinate = origin + randomRange;
+
+        if (isUserInArea)
+        {
+            Vector2 offsetAroundPlayer = Random.insideUnitCircle * Random.Range(20, 50);
+            randomCoordinate = new Vector3(origin.x + offsetAroundPlayer.x, origin.y, origin.z + offsetAroundPlayer.y);
+        }
+        else
+        {
+            Vector3 range = transform.localScale / 2.0f;
+            Vector3 randomRange = new Vector3(Random.Range(-range.x, range.x),
+                                              Random.Range(-range.y, range.y),
+                                              Random.Range(-range.z, range.z));
+            randomCoordinate = origin + randomRange;
+        }
+
         var memoryHole = Instantiate(MemoryHole, randomCoordinate, Quaternion.identity);
 
         float scaleIncrement;
         Vector3 startingScale;
+
+
+        float timeIncrement = timeToResizeHoles / numIncrements;
+        scaleIncrement = size / numIncrements;
         if (isShrinking)
         {
-            startingScale = new Vector3(10,10,10);
-            scaleIncrement = -.2f;
+            startingScale = new Vector3(size, size, size);
+            scaleIncrement = -scaleIncrement;
         }
         else
         {
             startingScale = new Vector3(0, 0, 0);
-            scaleIncrement = .2f;
-
         }
 
         memoryHole.transform.localScale = startingScale;
-        for (int i=0; i<20; i++)
+        for (int i=0; i< numIncrements; i++)
         {
             Vector3 ls = memoryHole.transform.localScale;
             memoryHole.transform.localScale = new Vector3(ls.x + scaleIncrement, ls.y + scaleIncrement, ls.z+scaleIncrement);
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(timeIncrement);
 
         }
         Destroy(memoryHole);
