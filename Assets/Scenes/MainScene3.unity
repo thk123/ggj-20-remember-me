@@ -2049,6 +2049,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading Screen Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e397cfa3722d547a50906f16de098d, type: 3}
 --- !u!114 &1307166014 stripped

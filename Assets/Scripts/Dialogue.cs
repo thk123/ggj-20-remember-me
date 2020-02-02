@@ -71,7 +71,11 @@ public class Dialogue : MonoBehaviour
         }
         else if (CurrentSentence == DialogueDataRef.Dialogue.Count || (PrintGibberish && CurrentSentence >= 3))
         {
-            screenFadeRef.loadNextLevel();
+            if (!PrintGibberish)
+            {
+                screenFadeRef.loadNextLevel();
+
+            }
             DialogueControllerRef.CloseDialogue();
             CurrentSentence = 0;
             return;
