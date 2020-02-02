@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Audio/Gameplay.meta
-guid: 71f449a754b5b4b1cb9fa198756a3932
-=======
-guid: bdfd67bd92a87cac8b9988471e656159
->>>>>>> 0d27e997f56d7f74d27e6e9f73c068df95a77309:Assets/Audio/Chimes.meta
+guid: 0487c3f07c48b9641a9b3f13c1dd5c4f
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
