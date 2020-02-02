@@ -89,10 +89,18 @@ public class Dialogue : MonoBehaviour
         else if(CharacterNamesDataRef.CharacterName[CurrentSentence] == "Player_Name")
         {
             characterName = playerName;
-
         }
 
+        var DialogueLine = DialogueDataRef.Dialogue[CurrentSentence];
+        string replacement;
         string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
+        if (DialogueLine.Contains("Player_Name"))
+        {
+            replacement = DialogueLine.Replace("Player_Name", playerName);
+            trueSentence = replacement;
+        }
+
+        
         string sentence = PrintGibberish ? gibberish(trueSentence.Length) : trueSentence;
 
         string name = PrintGibberish ? gibberish(characterName.Length) : characterName;

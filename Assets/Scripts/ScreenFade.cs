@@ -24,15 +24,18 @@ public class ScreenFade : MonoBehaviour
     };
 
     ScenePassThroughData scenePassThroughDataRef;
-
+    PlayerController playerControllerRef;
     void Start()
     {
+
         scenePassThroughDataRef = ScenePassThroughData.GetData();
         imageToFade.gameObject.SetActive(false); 
     }
 
     public void loadNextLevel()
     {
+        //playerControllerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        //playerControllerRef.playerDead();
         scenePassThroughDataRef.levelNum += 1;
         StartCoroutine(loadLevel(LevelLoadText[scenePassThroughDataRef.levelNum]));
     }
@@ -62,7 +65,7 @@ public class ScreenFade : MonoBehaviour
         imageToFade.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(5);
-
+        //playerControllerRef.playerDead();
         SceneManager.LoadScene(levelToLoad.ToString());
     }
 

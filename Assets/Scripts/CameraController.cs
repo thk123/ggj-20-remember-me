@@ -60,9 +60,11 @@ public class CameraController : MonoBehaviour
         originalRotation = transform.localRotation;
     }
 
-    public void SetPlayerDead()
+    public void togglePlayerDead()
     {
-        playerDead = true;
+        //playerDead = true;
+        if (playerDead == false) { playerDead = true; }
+        else { playerDead = false; }
     }
 
     static float ClampAngle(float angle, float min, float max)
