@@ -2032,6 +2032,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 501765876509661959, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: LastLevelDialogueBox
+      value: 
+      objectReference: {fileID: 1307166016}
+    - target: {fileID: 501765876509661959, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: LastLevelMessage
+      value: 
+      objectReference: {fileID: 1307166015}
     - target: {fileID: 501765876509662074, guid: 30e397cfa3722d547a50906f16de098d,
         type: 3}
       propertyPath: m_Name
@@ -2049,6 +2059,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb30709ed424d814bb2a79907108e878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1307166015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8574869849122645178, guid: 30e397cfa3722d547a50906f16de098d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1307166013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1307166016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8183548851598826265, guid: 30e397cfa3722d547a50906f16de098d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1307166013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1366817721

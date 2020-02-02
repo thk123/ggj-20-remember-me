@@ -51,9 +51,10 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    public void setPlayerDead()
+    public void togglePlayerDead()
     {
-        playerDead = true;
+        if (playerDead == false) { playerDead = true; }
+        else { playerDead = false; }
     }
 
     void movePlayer()
