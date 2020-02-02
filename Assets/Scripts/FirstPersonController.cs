@@ -59,7 +59,6 @@ public class FirstPersonController : MonoBehaviour
 
     void movePlayer()
     {
-        Cursor.visible = false;
         if (Input.GetKey(KeyCode.W))
         {
             _rigidBody.AddForce(yClamped(face.transform.forward) * MaxSpeed);

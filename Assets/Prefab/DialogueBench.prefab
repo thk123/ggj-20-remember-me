@@ -59,19 +59,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &775955216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5166863194163683828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ee03c00a9721d429b4fc538c069344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tauched: 0
 --- !u!64 &7252072635759457572
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -86,6 +73,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4964568135261556583, guid: 5451ee34484bcc55eacc6394f72e7886, type: 3}
+--- !u!114 &775955216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166863194163683828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ee03c00a9721d429b4fc538c069344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tauched: 0
 --- !u!114 &1514680913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   DialogueFileNameEditor: Story1
   CharacterNamesFileNameEditor: CharacterNames1
   screenFadeRef: {fileID: 0}
+  PrintGibberish: 1
 --- !u!1001 &3789092601494632701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,7 +207,12 @@ PrefabInstance:
     - target: {fileID: 6936407287493267249, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}
       propertyPath: m_Name
-      value: DialogueBench
+      value: Bench
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936407287493267254, guid: faf9ca36f746734c8a6961cd0a762e8e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6936407287493267258, guid: faf9ca36f746734c8a6961cd0a762e8e,
         type: 3}

@@ -20,10 +20,17 @@ public class Dialogue : MonoBehaviour
     public bool PrintGibberish = true;
     private string playerName;
 
+    private Material[] materialsOriginal;
+    private Material[] materialsToChange;
+
+
     void Awake()
     {
         Debug.Log("Dialogue: " + gameObject.name);
         InitializeState();
+        startcolor = GetComponent<Renderer>().material.color;
+        materialsOriginal = GetComponent<Renderer>().materials;
+        materialsToChange = GetComponent<Renderer>().materials;
     }
     void Start()
     {
@@ -33,6 +40,32 @@ public class Dialogue : MonoBehaviour
     void OnMouseDown()
     {
         ChangeDialogueOnClick();
+    }
+
+    Color startcolor;
+    Color OnHovercolor = Color.cyan;
+    Color OnHovercolor1 = Color.red;
+    void OnMouseEnter()
+    {
+        print("OnMouseEnter");
+        Cursor.visible = true;
+        float value = 1.5f;
+        foreach (Material material in materialsToChange)
+        {
+            material.SetColor("_TColor", new Color(value, value, value));
+        }
+        //GetComponent<Renderer>().material.color = OnHovercolor;
+    }
+    void OnMouseExit()
+    {
+        print("OnMouseExit");
+        Cursor.visible = false;
+        int i = 0;
+        foreach (Material material in materialsToChange)
+        {
+            material.SetColor("_TColor", new Color(1f, 1f, 1f));
+            i++;
+        }
     }
 
     void InitializeState()
