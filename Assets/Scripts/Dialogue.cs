@@ -68,7 +68,7 @@ public class Dialogue : MonoBehaviour
         {
             DialogueControllerRef.OpenDialogue();
         }
-        else if (CurrentSentence == DialogueDataRef.Dialogue.Count)
+        else if (CurrentSentence == DialogueDataRef.Dialogue.Count || (PrintGibberish && CurrentSentence >= 3))
         {
             DialogueControllerRef.CloseDialogue();
             CurrentSentence = 0;
