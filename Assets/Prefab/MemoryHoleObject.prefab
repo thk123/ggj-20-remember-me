@@ -114,10 +114,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3758929334816143920}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2b766cba9fb29294d90e93af3732bb55, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a64f482ea949ae549bee9f2520183e3a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -127,7 +127,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 4.9504952
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

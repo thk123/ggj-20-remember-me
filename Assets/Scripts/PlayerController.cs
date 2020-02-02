@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public void playerDead()
     {
-        firstPersonControllerRef.setPlayerDead();
-        cameraControllerRef.SetPlayerDead();
+        firstPersonControllerRef.togglePlayerDead();
+        cameraControllerRef.togglePlayerDead();
     }
     
     private void OnCollisionEnter(Collision other)

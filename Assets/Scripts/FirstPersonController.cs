@@ -30,7 +30,7 @@ public class FirstPersonController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!playerDead)
         {
@@ -39,9 +39,22 @@ public class FirstPersonController : MonoBehaviour
 
     }
 
-    public void setPlayerDead()
+    void Update()
     {
-        playerDead = true;
+        if (!playerDead)
+        {
+            if(_rigidBody.velocity.magnitude > 0 && Time.time > lastPlayedSound )
+            {
+                lastPlayedSound = Time.time + soundPlayInterval;
+                audioPlayer.playAudio();
+            }
+        }
+    }
+
+    public void togglePlayerDead()
+    {
+        if (playerDead == false) { playerDead = true; }
+        else { playerDead = false; }
     }
 
     void movePlayer()
@@ -64,14 +77,6 @@ public class FirstPersonController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             _rigidBody.AddForce(yClamped(face.transform.right) * MaxSpeed);
-        }
-
-        if(_rigidBody.velocity.magnitude > 0 && Time.time > lastPlayedSound )
-        {
-            lastPlayedSound = Time.time + soundPlayInterval;
-            audioPlayer.playAudio();
-            print("Play");
-
         }
     }
 

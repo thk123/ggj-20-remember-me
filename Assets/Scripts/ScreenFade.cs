@@ -9,7 +9,7 @@ public class ScreenFade : MonoBehaviour
     public Image imageToFade;
     public Image DialogueBox;
     public TextMeshProUGUI Message;
-
+    private bool PlayerExists = false;
     public Image LastLevelDialogueBox;
     public TextMeshProUGUI LastLevelMessage;
     public enum LevelName  {OpeningScene, TutorialScene, MainScene1, MainScene2, MainScene3, CreditsScene}
@@ -24,25 +24,17 @@ public class ScreenFade : MonoBehaviour
     };
 
     ScenePassThroughData scenePassThroughDataRef;
-
+    PlayerController playerControllerRef;
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("ScenePassThroughData"))
-        {
-            scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
-        }
-        else
-        {
-            Debug.LogWarning("Could not find level data, so falling back to always loading level 2 if you die.");
-            scenePassThroughDataRef = new ScenePassThroughData();
-            scenePassThroughDataRef.levelNum = 2;
-        }
 
+        scenePassThroughDataRef = ScenePassThroughData.GetData();
         imageToFade.gameObject.SetActive(false); 
     }
 
     public void loadNextLevel()
     {
+        if(PlayerExists ==true){playerControllerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); playerControllerRef.playerDead();}
         scenePassThroughDataRef.levelNum += 1;
         StartCoroutine(loadLevel(LevelLoadText[scenePassThroughDataRef.levelNum]));
     }
@@ -72,7 +64,8 @@ public class ScreenFade : MonoBehaviour
         imageToFade.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(5);
-
+        if (PlayerExists == true) { playerControllerRef.playerDead(); }
+        PlayerExists = false;
         SceneManager.LoadScene(levelToLoad.ToString());
     }
 

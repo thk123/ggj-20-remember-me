@@ -576,8 +576,6 @@ MonoBehaviour:
   imageToFade: {fileID: 501765875986020351}
   DialogueBox: {fileID: 501765874809448807}
   Message: {fileID: 501765875627429990}
-  LastLevelDialogueBox: {fileID: 8183548851598826265}
-  LastLevelMessage: {fileID: 8574869849122645178}
 --- !u!1 &8573038713545812896
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,13 +606,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6493214450759733802}
+  - {fileID: 3022661666731791168}
   m_Father: {fileID: 501765875986020349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1312.6, y: 555.3}
+  m_SizeDelta: {x: 1312.6, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &400579976248824487
 CanvasRenderer:

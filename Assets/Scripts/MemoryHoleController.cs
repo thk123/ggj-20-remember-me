@@ -13,6 +13,9 @@ public class MemoryHoleController : MonoBehaviour
 
     bool isShrinking = false;
     bool isUserInArea = false;
+
+    public float VerticalFactor = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,28 +64,27 @@ public class MemoryHoleController : MonoBehaviour
         }
 
         var memoryHole = Instantiate(MemoryHole, randomCoordinate, Quaternion.identity);
-
-        float scaleIncrement;
+        
         Vector3 startingScale;
-
+        Vector3 targetScale;
 
         float timeIncrement = timeToResizeHoles / numIncrements;
-        scaleIncrement = size / numIncrements;
         if (isShrinking)
         {
-            startingScale = new Vector3(size, 0.01f, size);
-            scaleIncrement = -scaleIncrement;
+            startingScale = new Vector3(size, VerticalFactor * size, size);
+            targetScale = new Vector3(0, 0, 0);
         }
         else
         {
-            startingScale = new Vector3(0, 0.01f, 0);
+            startingScale = new Vector3(0, 0, 0);
+            targetScale = new Vector3(size, VerticalFactor * size, size);
         }
 
         memoryHole.transform.localScale = startingScale;
         for (int i=0; i< numIncrements; i++)
         {
-            Vector3 ls = memoryHole.transform.localScale;
-            memoryHole.transform.localScale = new Vector3(ls.x + scaleIncrement, 0.01f, ls.z+scaleIncrement);
+            Vector3 scale = Vector3.Lerp(startingScale, targetScale, ((float) i) / ((float) numIncrements));
+            memoryHole.transform.localScale = scale;
             yield return new WaitForSeconds(timeIncrement);
 
         }

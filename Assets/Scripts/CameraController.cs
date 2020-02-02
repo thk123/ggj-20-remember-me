@@ -38,8 +38,8 @@ public class CameraController : MonoBehaviour
 
     void moveCamera() {
         //Gets rotational input from the mouse
-        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+        rotationY += Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
+        rotationX += Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
 
         //Clamp the rotation average to be within a specific value range
         float clampedRotationY = ClampAngle(rotationY, minimumY, maximumY);
@@ -60,9 +60,11 @@ public class CameraController : MonoBehaviour
         originalRotation = transform.localRotation;
     }
 
-    public void SetPlayerDead()
+    public void togglePlayerDead()
     {
-        playerDead = true;
+        //playerDead = true;
+        if (playerDead == false) { playerDead = true; }
+        else { playerDead = false; }
     }
 
     static float ClampAngle(float angle, float min, float max)

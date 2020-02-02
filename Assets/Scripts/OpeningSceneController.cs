@@ -28,8 +28,8 @@ public class OpeningSceneController : MonoBehaviour
 
     void startTutorial()
     {
-        string errorMessage = "Name must be at least 5 characters";
-        if(NameInputField.text.Length > 5 && NameInputField.text != errorMessage)
+        string errorMessage = "Name must be at least 2 characters";
+        if(NameInputField.text.Length > 1 && NameInputField.text != errorMessage)
         {
             openingSceneCanvas.gameObject.SetActive(false);
 
