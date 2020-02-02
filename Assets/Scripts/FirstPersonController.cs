@@ -47,8 +47,6 @@ public class FirstPersonController : MonoBehaviour
             {
                 lastPlayedSound = Time.time + soundPlayInterval;
                 audioPlayer.playAudio();
-                print("Play");
-
             }
         }
     }
