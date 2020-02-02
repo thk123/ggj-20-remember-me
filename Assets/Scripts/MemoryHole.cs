@@ -5,12 +5,16 @@ using UnityEngine;
 public class MemoryHole : MonoBehaviour
 {
     PlayerController playerControllerRef;
-    public GameObject AcessFadeScript;
+    public ScreenFade AcessFadeScript;
     // Start is called before the first frame update
     void Start()
     {
         playerControllerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        
+        AcessFadeScript = FindObjectOfType<ScreenFade>();
+        if (AcessFadeScript == null)
+        {
+            Debug.LogWarning("Could not fnid screen fade");
+        }
     }
 
     // Update is called once per frame
@@ -21,7 +25,7 @@ public class MemoryHole : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        AcessFadeScript.GetComponent<ScreenFade>().FadeBool = true;
+        AcessFadeScript.FadeBool = true;
         print("your dead");
         playerControllerRef.playerDead();
     }
