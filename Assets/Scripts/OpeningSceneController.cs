@@ -16,7 +16,7 @@ public class OpeningSceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
+        scenePassThroughDataRef = ScenePassThroughData.GetData();
         startButton.onClick.AddListener(startTutorial);
     }
 
