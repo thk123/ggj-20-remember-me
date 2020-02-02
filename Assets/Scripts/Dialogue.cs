@@ -17,11 +17,12 @@ public class Dialogue : MonoBehaviour
     public ScreenFade screenFadeRef;
 
 
-    private bool PrintGibberish = true;
+    public bool PrintGibberish = true;
     private string playerName;
 
     void Awake()
     {
+        Debug.Log("Dialogue: " + gameObject.name);
         InitializeState();
     }
     void Start()

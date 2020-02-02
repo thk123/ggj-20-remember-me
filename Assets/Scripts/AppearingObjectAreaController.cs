@@ -8,6 +8,8 @@ public class AppearingObjectAreaController : MonoBehaviour
     public int NumToInstantiate;
     List<GameObject> instantiatedObjects;
 
+    public float MaxDelay = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class AppearingObjectAreaController : MonoBehaviour
     {
         foreach(var obj in instantiatedObjects)
         {
-            float randomWait = Random.Range(0, 2);
+            float randomWait = Random.Range(0, MaxDelay);
             yield return new WaitForSeconds(randomWait);
             obj.GetComponent<Dissapear>().SetVisibility(true);
         }

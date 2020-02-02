@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class Dissapear : MonoBehaviour
 {
-    public KeyCode AlphaUp;
-    public KeyCode AlphaDown;
-    private float Aalpha = 1.0f;
     private int counter = 0;
     public bool Tauched;
-    Color OldColour;
-    
 
-    Color ChangeInAlpha;
+    
 
     private float fadeValue;
 
