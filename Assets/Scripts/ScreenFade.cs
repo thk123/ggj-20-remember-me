@@ -12,7 +12,7 @@ public class ScreenFade : MonoBehaviour
     private bool PlayerExists = false;
     public Image LastLevelDialogueBox;
     public TextMeshProUGUI LastLevelMessage;
-    public enum LevelName  {OpeningScene, TutorialScene, MainScene1, MainScene2, MainScene3, CreditsScene}
+    public enum LevelName  {OpeningScene, TutorialScene, MainScene1, MainScene2, MainScene3, EndScene,CreditsScene}
     List<string> LevelLoadText = new List<string>()
     {
         "",
@@ -20,7 +20,8 @@ public class ScreenFade : MonoBehaviour
         "TIME",
         "OATH",
         "MEND",
-        "I miss you. Please come back."
+        "I miss you. Please come back.",
+        "FIN"
     };
 
     ScenePassThroughData scenePassThroughDataRef;
