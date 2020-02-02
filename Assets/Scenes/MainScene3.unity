@@ -286,7 +286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ScreenFade
       value: 
-      objectReference: {fileID: 544641066}
+      objectReference: {fileID: 0}
     - target: {fileID: 3591716623003078366, guid: ba33ed4726299284db6f652c036a5d15,
         type: 3}
       propertyPath: m_Name
@@ -883,18 +883,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc7905c2a2463283289a6b97c5348e58, type: 3}
---- !u!114 &544641066 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7220854847390465354, guid: c81eea91336feb1f49f8603e35880fd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 861544577}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb30709ed424d814bb2a79907108e878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &552574727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2791,7 +2779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2062837211
 PrefabInstance:
@@ -3148,6 +3136,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc7905c2a2463283289a6b97c5348e58, type: 3}
+--- !u!1 &2123457055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123457057}
+  - component: {fileID: 2123457056}
+  m_Layer: 0
+  m_Name: LevelDefaultData
+  m_TagString: ScenePassThroughData
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2123457056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123457055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b600d80321d14764e952b928f0d02a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: TP
+  levelNum: 4
+  levelDefault: 1
+--- !u!4 &2123457057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123457055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 459, y: 189.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2134064230
 PrefabInstance:
   m_ObjectHideFlags: 0

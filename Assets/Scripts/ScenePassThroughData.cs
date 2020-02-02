@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ScenePassThroughData : MonoBehaviour
 {
     public string playerName;
     public int levelNum;
+    public bool levelDefault;
 
     void Awake()
     {
-        levelNum = 0;
-        DontDestroyOnLoad(this.gameObject);
+        if (!levelDefault)
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     // Start is called before the first frame update
@@ -23,5 +27,11 @@ public class ScenePassThroughData : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static ScenePassThroughData GetData()
+    {
+        var data = GameObject.FindObjectsOfType<ScenePassThroughData>();
+        return data.Length == 1 ? data[0] : data.First(foundData => !foundData.levelDefault);
     }
 }
