@@ -576,8 +576,8 @@ MonoBehaviour:
   imageToFade: {fileID: 501765875986020351}
   DialogueBox: {fileID: 501765874809448807}
   Message: {fileID: 501765875627429990}
-  LastLevelDialogueBox: {fileID: 0}
-  LastLevelMessage: {fileID: 0}
+  LastLevelDialogueBox: {fileID: 8183548851598826265}
+  LastLevelMessage: {fileID: 8574869849122645178}
 --- !u!1 &8573038713545812896
 GameObject:
   m_ObjectHideFlags: 0
