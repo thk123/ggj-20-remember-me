@@ -30,7 +30,12 @@ public class CameraController : MonoBehaviour
             moveCamera();
         }
 
-        if (enabledDebug)
+        if (Input.GetKeyDown(KeyCode.G) && Debug.isDebugBuild)
+        {
+            cameraControlsActivated = !cameraControlsActivated;
+        }
+
+        if (Debug.isDebugBuild)
         {
             _camera.backgroundColor = Input.GetKey(KeyCode.V) ? Color.red : defaultClearColor;
         }
