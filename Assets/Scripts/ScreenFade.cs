@@ -49,7 +49,7 @@ public class ScreenFade : MonoBehaviour
     {
         LevelName levelToLoad = (LevelName)scenePassThroughDataRef.levelNum;
 
-        if(levelToLoad == LevelName.CreditsScene)
+        if(levelToLoad == LevelName.EndScene)
         {
             DialogueBox.gameObject.SetActive(false);
             LastLevelDialogueBox.gameObject.SetActive(true);
