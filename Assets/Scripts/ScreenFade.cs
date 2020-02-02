@@ -19,24 +19,18 @@ public class ScreenFade : MonoBehaviour
         "MEND",
         "I miss you. Please come back."
     };
-    LevelName CurrentLevelName;
-    // Start is called before the first frame update
 
     ScenePassThroughData scenePassThroughDataRef;
 
     void Start()
     {
-        scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
-
-        CurrentLevelName = (LevelName)scenePassThroughDataRef.levelNum;
+        
+        if (GameObject.FindGameObjectWithTag("ScenePassThroughData"))
+        {
+            scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
+        }
 
         imageToFade.gameObject.SetActive(false); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void loadNextLevel()
@@ -61,36 +55,5 @@ public class ScreenFade : MonoBehaviour
 
         SceneManager.LoadScene(levelToLoad.ToString());
     }
-    //void Lose()
-    //{
-    //    DialogueBox.color = new Color(0, 0, 0, 0);
-    //    ColourChange.a += 0.01f;
-    //    WaitTime += Time.deltaTime;
-    //    TextboxColourChange.a += 0.1f;
-    //    GetComponent<Image>().color = ColourChange;
-    //    Message.text = "You got lost in your memories...";
-    //    if (WaitTime > 5) { SceneManager.LoadScene(LevelIndex.ToString()); }
-    //}
-    //void Win()
-    //{
-    //    DialogueBox.color = new Color(0, 0, 0, 0);
-    //    WaitTime += Time.deltaTime;
-    //    ColourChange.a += 0.01f;
-    //    TextboxColourChange.a += 0.1f;
-    //    GetComponent<Image>().color = ColourChange;
-    //    Message.text = "I miss you. Please come back.";
-    //    if (WaitTime > 5) { SceneManager.LoadScene("Ending"); }
-    //}
-    //void SceneChanger()
-    //{
-    //    switch (LevelIndex)
-    //    {
-    //        case LevelList.Tutorial:
-    //            SceneManager.LoadScene("Tutorial");
-    //            break;
-    //        case LevelList.Main:
-    //            SceneManager.LoadScene("Main");
-    //            break;
-    //    }
-    //}
+
 }
