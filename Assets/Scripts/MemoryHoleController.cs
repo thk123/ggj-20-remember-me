@@ -32,14 +32,12 @@ public class MemoryHoleController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("entered zone");
         isUserInArea = true;
     }
 
     //When the Primitive exits the collision, it will change Color
     private void OnTriggerExit(Collider other)
     {
-        print("exit zone");
         isUserInArea = false;
     }
 
