@@ -159,8 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0ab6c6f076d9b4b1898bd6f747bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 15
-  sensitivityY: 15
+  sensitivityX: 150
+  sensitivityY: 150
   minimumX: -360
   maximumX: 360
   minimumY: -60

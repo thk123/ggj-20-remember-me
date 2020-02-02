@@ -38,8 +38,8 @@ public class CameraController : MonoBehaviour
 
     void moveCamera() {
         //Gets rotational input from the mouse
-        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+        rotationY += Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
+        rotationX += Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
 
         //Clamp the rotation average to be within a specific value range
         float clampedRotationY = ClampAngle(rotationY, minimumY, maximumY);
