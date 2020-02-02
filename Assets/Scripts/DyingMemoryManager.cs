@@ -7,6 +7,8 @@ public class DyingMemoryManager : MonoBehaviour
 {
     private DyingMemory[] dyingMemories;
 
+    public Dialogue ThingToEnable; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,14 @@ public class DyingMemoryManager : MonoBehaviour
     {
         if (dyingMemories.All(memory => memory.GetComponent<Dissapear>().Tauched))
         {
-            Debug.Log("All memories visible!!");    
+            if (ThingToEnable != null)
+            {
+                ThingToEnable.DisableGibberish();
+            }
+            else
+            {
+                Debug.LogWarning("All dying memories complete - but nothing happens!");
+            }
         }
         
     }

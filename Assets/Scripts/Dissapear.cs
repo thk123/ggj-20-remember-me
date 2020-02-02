@@ -36,10 +36,19 @@ public class Dissapear : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        OnTriggerEnter(other.collider);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         if(other.gameObject.GetComponent<FirstPersonController>() != null)
         {
             SetVisibility(true);
-            StartCoroutine(appearingObjectAreaControllerRef.MakeAllOthersInGroupVisible());
+            if (appearingObjectAreaControllerRef != null)
+            {
+                StartCoroutine(appearingObjectAreaControllerRef.MakeAllOthersInGroupVisible());
+            }
         }
     }
 

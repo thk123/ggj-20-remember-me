@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Text;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dialogue : MonoBehaviour
 {
     public string DialogueFileNameEditor;
     public string CharacterNamesFileNameEditor;
-    public string CharacterName;
 
     DialogueController DialogueControllerRef;
     DialogueData DialogueDataRef;
@@ -12,6 +14,10 @@ public class Dialogue : MonoBehaviour
     string CurrentEventRef;
 
     int CurrentSentence;
+
+
+    private bool PrintGibberish = true;
+    private string playerName;
 
     void Awake()
     {
@@ -30,6 +36,21 @@ public class Dialogue : MonoBehaviour
     void InitializeState()
     {
         CurrentSentence = 0;
+        GameObject passthroughData = GameObject.FindGameObjectWithTag("ScenePassThroughData");
+        if(passthroughData != null)
+        {
+            playerName = passthroughData.GetComponent<ScenePassThroughData>().playerName;
+        }
+        else
+        {
+            playerName = "Charlie";
+            Debug.LogWarning("No passthrough data found... player name will be default");
+        }
+    }
+
+    public void DisableGibberish()
+    {
+        PrintGibberish = false;
     }
 
     void GetReferences()
@@ -53,9 +74,38 @@ public class Dialogue : MonoBehaviour
             CurrentSentence = 0;
             return;
         }
+        
+        var characterName = CharacterNamesDataRef.CharacterName[CurrentSentence];
+        if (CharacterNamesDataRef.CharacterName[CurrentSentence] == "Player_Initial")
+        {
+            characterName = playerName[0] + "...";
+        }
+        else if(CharacterNamesDataRef.CharacterName[CurrentSentence] == "Player_Name")
+        {
+            characterName = playerName;
 
-        DialogueControllerRef.DisplayDialogue(CharacterNamesDataRef.CharacterName[CurrentSentence], DialogueDataRef.Dialogue[CurrentSentence]);
+        }
+
+        string trueSentence = DialogueDataRef.Dialogue[CurrentSentence];
+        string sentence = PrintGibberish ? gibberish(trueSentence.Length) : trueSentence;
+
+        string name = PrintGibberish ? gibberish(characterName.Length) : characterName;
+
+        DialogueControllerRef.DisplayDialogue(name, sentence);
+
         CurrentSentence += 1;
+    }
+
+    String gibberish(int length)
+    {
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; ++i)
+        {
+            char randomChar = (char) Random.Range(32, 127);
+            sb.Append(randomChar);
+        }    
+
+        return sb.ToString();
     }
 }
 
