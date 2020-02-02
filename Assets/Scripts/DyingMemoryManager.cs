@@ -20,6 +20,11 @@ public class DyingMemoryManager : MonoBehaviour
     {
         if (dyingMemories.All(memory => memory.GetComponent<Dissapear>().Tauched))
         {
+            foreach (var dyingMemory in dyingMemories)
+            {
+                dyingMemory.enabled = false;
+            }
+
             if (ThingToEnable != null)
             {
                 ThingToEnable.DisableGibberish();
