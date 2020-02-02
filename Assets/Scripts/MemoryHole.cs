@@ -21,7 +21,6 @@ public class MemoryHole : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        AcessFadeScript.FadeBool = true;
         print("your dead");
         playerControllerRef.playerDead();
     }

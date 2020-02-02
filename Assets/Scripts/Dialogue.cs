@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     string CurrentEventRef;
 
     int CurrentSentence;
+    public ScreenFade screenFadeRef;
 
 
     private bool PrintGibberish = true;
@@ -70,6 +71,7 @@ public class Dialogue : MonoBehaviour
         }
         else if (CurrentSentence == DialogueDataRef.Dialogue.Count)
         {
+            screenFadeRef.loadNextLevel();
             DialogueControllerRef.CloseDialogue();
             CurrentSentence = 0;
             return;
