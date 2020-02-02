@@ -9,7 +9,7 @@ public class ScreenFade : MonoBehaviour
     public Image imageToFade;
     public Image DialogueBox;
     public TextMeshProUGUI Message;
-
+    private bool PlayerExists = false;
     public Image LastLevelDialogueBox;
     public TextMeshProUGUI LastLevelMessage;
     public enum LevelName  {OpeningScene, TutorialScene, MainScene1, MainScene2, MainScene3, CreditsScene}
@@ -34,8 +34,7 @@ public class ScreenFade : MonoBehaviour
 
     public void loadNextLevel()
     {
-        //playerControllerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        //playerControllerRef.playerDead();
+        if(PlayerExists ==true){playerControllerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); playerControllerRef.playerDead();}
         scenePassThroughDataRef.levelNum += 1;
         StartCoroutine(loadLevel(LevelLoadText[scenePassThroughDataRef.levelNum]));
     }
@@ -65,7 +64,8 @@ public class ScreenFade : MonoBehaviour
         imageToFade.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(5);
-        //playerControllerRef.playerDead();
+        if (PlayerExists == true) { playerControllerRef.playerDead(); }
+        PlayerExists = false;
         SceneManager.LoadScene(levelToLoad.ToString());
     }
 
