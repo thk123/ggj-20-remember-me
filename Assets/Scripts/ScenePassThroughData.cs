@@ -6,6 +6,7 @@ public class ScenePassThroughData : MonoBehaviour
 {
     public string playerName;
     public int levelNum;
+
     void Awake()
     {
         levelNum = 0;
