@@ -543,6 +543,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 501765875986020349, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 501765875986020349, guid: 30e397cfa3722d547a50906f16de098d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2500
+      objectReference: {fileID: 0}
     - target: {fileID: 501765876509661958, guid: 30e397cfa3722d547a50906f16de098d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -797,6 +807,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073444645077318437, guid: c81eea91336feb1f49f8603e35880fd7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073444645077318437, guid: c81eea91336feb1f49f8603e35880fd7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8857114228631132710, guid: c81eea91336feb1f49f8603e35880fd7,
         type: 3}

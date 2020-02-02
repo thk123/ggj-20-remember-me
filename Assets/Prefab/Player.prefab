@@ -159,12 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0ab6c6f076d9b4b1898bd6f747bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 150
-  sensitivityY: 150
+  sensitivityX: 10
+  sensitivityY: 10
   minimumX: -360
   maximumX: 360
   minimumY: -60
-  maximumY: 60
+  maximumY: 45
   frameCounter: 20
   enabledDebug: 1
 --- !u!114 &7444303827971841346
