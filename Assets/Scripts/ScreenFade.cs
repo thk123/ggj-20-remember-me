@@ -24,10 +24,15 @@ public class ScreenFade : MonoBehaviour
 
     void Start()
     {
-        
         if (GameObject.FindGameObjectWithTag("ScenePassThroughData"))
         {
             scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
+        }
+        else
+        {
+            Debug.LogWarning("Could not find level data, so falling back to always loading level 2 if you die.");
+            scenePassThroughDataRef = new ScenePassThroughData();
+            scenePassThroughDataRef.levelNum = 2;
         }
 
         imageToFade.gameObject.SetActive(false); 
