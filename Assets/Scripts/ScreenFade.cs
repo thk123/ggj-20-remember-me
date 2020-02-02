@@ -9,7 +9,7 @@ public class ScreenFade : MonoBehaviour
     public Image imageToFade;
     public Image DialogueBox;
     public TextMeshProUGUI Message;
-    public enum LevelName  {OpeningScene, TutorialScene, Scene1, Scene2, Scene3, EndScene}
+    public enum LevelName  {OpeningScene, TutorialScene, Scene1, Scene2, Scene3, CreditsScene}
     List<string> LevelLoadText = new List<string>()
     {
         "",
