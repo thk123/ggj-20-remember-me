@@ -20,12 +20,11 @@ public class MemoryHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        AcessFadeScript.FadeBool = true;
         print("your dead");
         playerControllerRef.playerDead();
     }

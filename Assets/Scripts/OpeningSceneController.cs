@@ -7,9 +7,12 @@ using UnityEngine.UI;
 
 public class OpeningSceneController : MonoBehaviour
 {
+    public Canvas openingSceneCanvas;
     public TMP_InputField NameInputField;
     public Button startButton;
     ScenePassThroughData scenePassThroughDataRef;
+
+    public ScreenFade screenFadeRef;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +31,11 @@ public class OpeningSceneController : MonoBehaviour
         string errorMessage = "Name must be at least 5 characters";
         if(NameInputField.text.Length > 5 && NameInputField.text != errorMessage)
         {
+            openingSceneCanvas.gameObject.SetActive(false);
+
             scenePassThroughDataRef.playerName = NameInputField.text;
-            SceneManager.LoadScene("TutorialScene");
+            screenFadeRef.loadNextLevel();
+            //SceneManager.LoadScene("TutorialScene");
         }
         else
         {

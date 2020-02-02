@@ -6,76 +6,91 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class ScreenFade : MonoBehaviour
 {
-    public bool FadeBool;
-    Color ColourChange;
-    Color TextboxColourChange;
-    private float WaitTime;
-    public bool EndingSequence;
-    public bool ChangeScene;
-
-    //GameObject DialogueBox;
+    public Image imageToFade;
     public Image DialogueBox;
     public TextMeshProUGUI Message;
-    public enum LevelList  {Tutorial, Main}
-    LevelList LevelIndex;
+    public enum LevelName  {OpeningScene, TutorialScene, Scene1, Scene2, Scene3, CreditsScene}
+    List<string> LevelLoadText = new List<string>()
+    {
+        "",
+        "MEET",
+        "TIME",
+        "OATH",
+        "MEND",
+        "I miss you. Please come back."
+    };
+    LevelName CurrentLevelName;
     // Start is called before the first frame update
+
+    ScenePassThroughData scenePassThroughDataRef;
+
     void Start()
     {
-        ChangeScene = false;
-        FadeBool = false;
-        EndingSequence = false;
-        LevelIndex = LevelList.Tutorial;
-        ColourChange = GetComponent<Image>().color;
-        //TextboxColourChange = DialogueBox.color;
-        WaitTime = 0.0f;
+        scenePassThroughDataRef = GameObject.FindGameObjectWithTag("ScenePassThroughData").GetComponent<ScenePassThroughData>();
+
+        CurrentLevelName = (LevelName)scenePassThroughDataRef.levelNum;
+
+        imageToFade.gameObject.SetActive(false); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (FadeBool == true)
-        {
-            if (EndingSequence == true)
-            {
-                Win();
-            }
-            else if (EndingSequence != true)
-            {
-                Lose();
-            }
-        }
-        if (ChangeScene == true) { }
+        
     }
-    void Lose()
+
+    public void loadNextLevel()
     {
-        DialogueBox.color = new Color(0,0,0,0);
-        ColourChange.a += 0.01f;
-        WaitTime += Time.deltaTime;
-        TextboxColourChange.a += 0.1f;
-        GetComponent<Image>().color = ColourChange;
-        Message.text = "You got lost in your memories...";
-        if (WaitTime > 5) { SceneManager.LoadScene(LevelIndex.ToString()); }
+        scenePassThroughDataRef.levelNum += 1;
+        StartCoroutine(loadLevel(LevelLoadText[scenePassThroughDataRef.levelNum]));
     }
-    void Win()
+
+    public void loadCurrentLevelBecauseDead()
     {
-        DialogueBox.color = new Color(0, 0, 0, 0);
-        WaitTime += Time.deltaTime;
-        ColourChange.a += 0.01f;
-        TextboxColourChange.a += 0.1f;
-        GetComponent<Image>().color = ColourChange;
-        Message.text = "I miss you. Please come back.";
-        if (WaitTime > 5) { SceneManager.LoadScene("Ending"); }
+        StartCoroutine(loadLevel("You got lost in your memories..."));
     }
-    void SceneChanger()
+
+    IEnumerator loadLevel(string levelText)
     {
-        switch (LevelIndex)
-        {
-            case LevelList.Tutorial:
-                SceneManager.LoadScene("Tutorial");
-                break;
-            case LevelList.Main:
-                SceneManager.LoadScene("Main");
-                break;
-        }
+        LevelName levelToLoad = (LevelName)scenePassThroughDataRef.levelNum;
+        Message.text = levelText;
+
+        imageToFade.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene(levelToLoad.ToString());
     }
+    //void Lose()
+    //{
+    //    DialogueBox.color = new Color(0, 0, 0, 0);
+    //    ColourChange.a += 0.01f;
+    //    WaitTime += Time.deltaTime;
+    //    TextboxColourChange.a += 0.1f;
+    //    GetComponent<Image>().color = ColourChange;
+    //    Message.text = "You got lost in your memories...";
+    //    if (WaitTime > 5) { SceneManager.LoadScene(LevelIndex.ToString()); }
+    //}
+    //void Win()
+    //{
+    //    DialogueBox.color = new Color(0, 0, 0, 0);
+    //    WaitTime += Time.deltaTime;
+    //    ColourChange.a += 0.01f;
+    //    TextboxColourChange.a += 0.1f;
+    //    GetComponent<Image>().color = ColourChange;
+    //    Message.text = "I miss you. Please come back.";
+    //    if (WaitTime > 5) { SceneManager.LoadScene("Ending"); }
+    //}
+    //void SceneChanger()
+    //{
+    //    switch (LevelIndex)
+    //    {
+    //        case LevelList.Tutorial:
+    //            SceneManager.LoadScene("Tutorial");
+    //            break;
+    //        case LevelList.Main:
+    //            SceneManager.LoadScene("Main");
+    //            break;
+    //    }
+    //}
 }
